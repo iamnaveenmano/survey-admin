@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react'
 import SurveyItem from './SurveyItem'
 
-class Surveys extends Component {
- render(){
-    console.log(this.props.surveys)
-
-    return this.props.surveys.map((survey) => (
-        <SurveyItem key={survey.id} survey={survey} />
-    ))
- }
-};
-
-export default Surveys;
+export default function surveys({ surveys }) {
+    return (
+        surveys.map((survey) => {
+            return <SurveyItem key={survey.id} survey={survey} />
+        })
+    )
+}
