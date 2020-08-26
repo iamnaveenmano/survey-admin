@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"surveyadmin8fb73c67": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
