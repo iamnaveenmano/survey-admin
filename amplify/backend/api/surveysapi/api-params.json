@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/survey",
+            "lambdaFunction": "surveysfunction",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "surveysapi",
+    "apiName": "surveysapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "surveysfunction"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-surveyadmin-dev-223510-authRole",
+        "unAuthRoleName": "amplify-surveyadmin-dev-223510-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "surveysfunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

@@ -6,5 +6,48 @@
 			"dependsOn": [],
 			"customAuth": false
 		}
+	},
+	"storage": {
+		"surveys": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"function": {
+		"surveysfunction": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "surveys",
+					"attributes": [
+						"Name",
+						"Arn"
+					],
+					"attributeEnvMap": {
+						"Name": "TABLE_NAME",
+						"Arn": "TABLE_ARN"
+					}
+				}
+			]
+		}
+	},
+	"api": {
+		"surveysapi": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "surveysfunction",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		}
 	}
 }
