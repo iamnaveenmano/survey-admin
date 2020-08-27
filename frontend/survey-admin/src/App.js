@@ -29,7 +29,7 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="col-sm"></div>
-          <div className="col-sm"><h4>{buttonClicked ? 'Create New Survey': 'Surveys List'}</h4></div>
+          <div className="col-sm"><h4>{buttonClicked ? 'Create New Survey': 'Surveys'}</h4></div>
           <div className="col-sm"></div>
         </div>
         {!buttonClicked ? <button className="btn btn-primary" onClick={()=> setButtonClicked(true)}>Create New Survey</button> : null}

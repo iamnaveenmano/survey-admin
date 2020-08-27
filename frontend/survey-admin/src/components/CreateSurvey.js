@@ -107,7 +107,7 @@ export default function CreateSurvey({surveys, setSurveys, onClose}) {
                 <label className="col-sm-4" style={{ 'textAlign': 'right'  }}>Survey Accessbility</label> 
                 <div className="col-sm-6">
                     <select id="inputState" className="form-control" value={accessibility} onChange={(e)=> setAccessbility(e.target.value)}>
-                        <option selected>Choose...</option>
+                        <option defaultValue>Choose...</option>
                         <option>UserGroup1</option>
                         <option>UserGroup2</option>
                         <option>UserGroup3</option>

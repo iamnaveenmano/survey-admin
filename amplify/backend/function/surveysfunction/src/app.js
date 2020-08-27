@@ -76,12 +76,26 @@ app.get(path + hashKeyPath, function(req, res) {
     }
   }
 
-  let queryParams = {
-    TableName: tableName,
-    KeyConditions: condition
-  }
+  // let queryParams = {
+  //   TableName: tableName,
+  //   KeyConditions: condition
+  // }
 
-  console.log(queryParams);
+  let userId = req.apiGateway.event.requestContext.identity.cognitoIdentityId;
+  console.log(userId);
+
+  const queryParams = {
+    TableName: tableName,
+    FilterExpression: '#userId = :value',
+    ExpressionAttributeNames: {
+      '#userId': 'userId',
+    },
+    ExpressionAttributeValues: {
+      ':value': userId
+    },
+  };
+
+  console.log(JSON.stringify(queryParams));
 
   dynamodb.scan(queryParams, (err, data) => {
     if (err) {
