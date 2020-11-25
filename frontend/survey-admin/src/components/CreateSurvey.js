@@ -64,28 +64,28 @@ export default function CreateSurvey({surveys, setSurveys, onClose}) {
             <div className="row">
                 <label className="col-sm-4" style={{ 'textAlign': 'right'  }}>Survey Name</label>
                 <div className="col-sm-6">
-                    <input type="text" className="form-control" id="inputPassword" value={name} onChange={(e)=> setName(e.target.value)}/>
+                    <input type="text" className="form-control" id="inputName" value={name} onChange={(e)=> setName(e.target.value)}/>
                 </div>
             </div>
             <br/>
             <div className="row">
                 <label className="col-sm-4" style={{ 'textAlign': 'right'  }}>Survey Expiry Date</label>
                 <div className="col-sm-6">
-                    <input type="date" className="form-control" id="inputPassword" value={expiryDate} onChange={(e)=> setExpiryDate(e.target.value)}/>
+                    <input type="date" className="form-control" id="inputDate" value={expiryDate} onChange={(e)=> setExpiryDate(e.target.value)}/>
                 </div>
             </div>
             <br/>
             <div className="row">
                 <label className="col-sm-4" style={{ 'textAlign': 'right'  }}>Survey URL</label>
                 <div className="col-sm-6">
-                    <input type="text" className="form-control" id="inputPassword" value={url} onChange={(e)=> setUrl(e.target.value)}/>
+                    <input type="text" className="form-control" id="inputURL" value={url} onChange={(e)=> setUrl(e.target.value)}/>
                 </div>
             </div>
             <br/>
             <div className="row">
                 <label className="col-sm-4" style={{ 'textAlign': 'right'  }}>Survey From Email Address</label>
                 <div className="col-sm-6">
-                    <input type="text" className="form-control" id="inputPassword" value={email} onChange={(e)=> setEmail(e.target.value)}/>
+                    <input type="text" className="form-control" id="inputEmail" value={email} onChange={(e)=> setEmail(e.target.value)}/>
                 </div>
             </div>
             <br/>
